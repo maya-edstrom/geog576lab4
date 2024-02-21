@@ -21,7 +21,7 @@
   position: absolute;
   z-index: 10;
   top: 10px;
-  right: 30px;
+  right: 10px;
   background-color: darkgray;
   color: white;
   padding: 8px 16px;
@@ -70,9 +70,9 @@
                     view: view
         });
 
-        // Add the locate widget to the top left corner of the view
+        // Add the locate widget to the bottom right corner of the view
         view.ui.add(locateBtn, {
-          position: "top-right"
+          position: "bottom-right"
         });
 
         const searchWidget = new Search({
