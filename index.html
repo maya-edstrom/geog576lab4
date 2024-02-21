@@ -57,7 +57,14 @@
         });
 
         const searchWidget = new Search({
-            view: view
+            view: view,
+            includeDefaultSources: false,
+            sources: [{
+                name: "apiKey locator",
+                placeholder: "APIs are Key",
+                apiKey: "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H",
+                url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+  }]
 });
 // Adds the search widget below other elements in
 // the top left corner of the view
