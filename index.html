@@ -27,11 +27,11 @@
         "esri/views/MapView",
         "esri/config",
         "esri/widgets/Locate",
-        "esri/widgets/Search"
-    
+        "esri/widgets/Search",
+        "esri/layers/FeatureLayer"    
     ],
         
-        (Map, MapView, esriConfig, Locate, Search) => {
+        (Map, MapView, esriConfig, Locate, Search, FeatureLayer) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -61,12 +61,20 @@
             sources: [{
                 url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer",
                 placeholder: "Find address or place",
-                
   }]
 });
-// Adds the search widget below other elements in
-// the top left corner of the view
-        view.ui.add(searchWidget, {
+
+
+// Create featurelayer from feature service 
+const layer = new FeatureLayer({ 
+  // URL to the service 
+   url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_b1317cf4e5ae4149ad1b916a99578ee9_results/FeatureServer"
+});
+
+map.add(layer);
+
+// Add search widget to top left corner of the view
+view.ui.add(searchWidget, {
         position: "top-left",
         index: 2
 });
