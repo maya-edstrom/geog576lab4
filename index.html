@@ -26,11 +26,12 @@
         "esri/Map", 
         "esri/views/MapView",
         "esri/config",
-        "esri/widgets/Locate"
+        "esri/widgets/Locate",
+        "esri/widgets/Search"
     
     ],
         
-        (Map, MapView, esriConfig, Locate) => {
+        (Map, MapView, esriConfig, Locate, Search) => {
 
         esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -54,6 +55,16 @@
         view.ui.add(locateBtn, {
           position: "top-right"
         });
+
+        const searchWidget = new Search({
+            view: view
+});
+// Adds the search widget below other elements in
+// the top left corner of the view
+        view.ui.add(searchWidget, {
+        position: "top-center",
+        index: 2
+});
 
          });
         </script>
